@@ -36,6 +36,7 @@
                                 <th>Catatan</th>
                                 <th>Denda</th>
                                 <th>Aksi</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody id="">
@@ -69,6 +70,11 @@
 
                                         </div>
                                     </td>
+                                    @if ($row->peminjaman_statuskembali == 1)
+                                        <td>tuntas</td>
+                                    @else
+                                        <td>(belum kembali)</td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>

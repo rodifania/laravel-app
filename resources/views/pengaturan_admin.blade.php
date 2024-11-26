@@ -41,35 +41,6 @@
                         </div>
                     </form>
                 </div>
-                <form action="" class="my-4 row gap-3">
-                    <div class="form-group col-12 col-md-4">
-                        <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" name="nama" id="nama">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <label for="alamat" class="form-label">Alamat</label>
-                        <input type="text" class="form-control" name="alamat" id="alamat">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" name="username" id="username">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" id="email">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <label for="notelp" class="form-label">No Telp</label>
-                        <input type="number" class="form-control" name="notelp" id="notelp">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" id="password">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <button class="btn btn-primary">Update</button>
-                    </div>
-                </form>
             </div>
         </main>
         @include('template.footer')

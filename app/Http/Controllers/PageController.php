@@ -98,7 +98,7 @@ class PageController extends Controller
 
     public function peminjaman()
     {
-        $user_id = "user123";
+        $user_id = Auth::user()->user_id;
 
         $peminjaman = PeminjamanDetail::with(['peminjaman_content', 'buku_content'])
             ->whereHas(

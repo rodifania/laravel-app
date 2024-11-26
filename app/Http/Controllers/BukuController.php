@@ -26,7 +26,12 @@ class BukuController extends Controller
         // dd($data);
 
         Buku::createBuku($data);
-
+        if ($request->hasFile('buku_gambar')) {
+            $data = $request->file('buku_gambar');
+            Buku::upload($id, $data);
+            return redirect()->route('buku.index', ['action' => 'show'])->with('success', 'Foto buku berhasil ditambahkan!');
+        }
+        
         return redirect()->route('buku.index')->with('success', 'Data buku berhasil ditambahkan!');
     }
 

@@ -38,6 +38,14 @@
                                     placeholder="Masukkan id peminjam">
                             </div>
                             <div class="col-12 col-md-4 form-group">
+                                <label for="denda" class="form-label">Status</label>
+                                <select name="status_kembali" id="kategori" class="form-control">
+                                    <option value="">Pilih Status</option>
+                                    <option value="1">Kembali</option>
+                                    <option value="0">Belum Kembali</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-4 form-group">
                                 <label for="catatan" class="form-label">Catatan</label>
                                 <input type="text" name="catatan" id="catatan" class="form-control"
                                     placeholder="Masukkan id peminjam">

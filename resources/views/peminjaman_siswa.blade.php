@@ -37,9 +37,15 @@
                                     <td>{{ $peminjaman->buku_content->buku_judul }}</td>
                                     <td>{{ $peminjaman->peminjaman_content->peminjaman_tglpinjam }}</td>
                                     <td>{{ $peminjaman->peminjaman_content->peminjaman_tglkembali }}</td>
-                                    <td>{{ $peminjaman->peminjaman_content->peminjaman_statuskembalian }}</td>
+                                    
+                                    @if ($peminjaman->peminjaman_content->peminjaman_statuskembali == 1)
+                                        <td>tuntas</td>
+                                    @else
+                                        <td>(belum kembali)</td>
+                                    @endif
+
                                     <td>{{ $peminjaman->peminjaman_content->peminjaman_note }}</td>
-                                    <td>{{ $peminjaman->peminjaman_content->peminjaman_denda }}</td>
+                                    <td>{{ $peminjaman->peminjaman_content->peminjam_denda }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

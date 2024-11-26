@@ -16,7 +16,7 @@
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Halaman Create Data Buku</li>
                     </ol>
-                    <form action="{{ route('action.createbuku') }}" class="row my-4 gap-3" method="post">
+                    <form enctype="multipart/form-data" action="{{ route('action.createbuku') }}" class="row my-4 gap-3" method="post">
                         @csrf
 
                         {{-- <div class="form-group col-12 col-md-6 col-lg-4">
@@ -74,6 +74,12 @@
                             <label for="buku_thnterbit" class="form-label">Tahun Terbit Buku</label>
                             <input type="text" name="buku_thnterbit" id="buku_thnterbit" class="form-control"
                                 placeholder="Masukkan  tahun terbit">
+                        </div>
+                        <div class="row mb-3">
+                            <label for="buku_gambar" class="col-sm-2 col-form-label">Gambar Cover (opsional)</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control" id="buku_gambar" name="buku_gambar">
+                            </div>
                         </div>
                         <div class="form-group col-12 col-md-6 col-lg-4">
                             <button class="btn btn-success" type="submit">Tambahkan</button>

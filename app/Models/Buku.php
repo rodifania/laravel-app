@@ -5,6 +5,7 @@ namespace App\Models;
 use id;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Storage;
 
 class Buku extends Model
 {
@@ -44,7 +45,6 @@ class Buku extends Model
             $buku->update($data);
             return $buku;
         }
-
         return null;
     }
 
@@ -78,5 +78,17 @@ class Buku extends Model
     public function rak()
     {
         return $this->hasOne(Rak::class, 'rak_id', 'buku_rak_id');
+    }
+    public static function upload($id, $data)
+    {
+        $buku = self::find($id);
+        if ($buku->buku_pict_url) {
+            Storage::delete($buku->buku_pict_url);
+        }
+        if ($data) {
+            $path = $data->store('public/buku_pictures');
+            $buku->buku_pict_url = $path;
+        }
+        $buku->save();
     }
 }

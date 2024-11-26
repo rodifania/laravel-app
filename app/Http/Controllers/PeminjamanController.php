@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Peminjaman;
 use Illuminate\Http\Request;
 use App\Models\PeminjamanDetail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PeminjamanController extends Controller
@@ -30,7 +31,7 @@ class PeminjamanController extends Controller
      */
     public function store($id)
     {
-        $user_id = 'user123';
+        $user_id = Auth::user()->user_id;
         $peminjaman_id = mt_rand(1000000000000000, 9999999999999999);
         $date = date("Y-m-d");
 
@@ -80,7 +81,7 @@ class PeminjamanController extends Controller
 
         $data = [
             'peminjaman_tglkembali' => $date_now,
-            'peminjaman_statuskembali' => 1,
+            'peminjaman_statuskembali' => $request->status_kembali,
             'peminjaman_note' => $request->catatan,
             'peminjam_denda' => $request->denda,
         ];
